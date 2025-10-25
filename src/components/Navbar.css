@@ -1,0 +1,107 @@
+nav{
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.navbar_fondo{
+    background-color: rgb(80, 134, 235);
+    font-size: medium;
+    height: 4rem;
+    padding: 0rem 0.5rem;
+    filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.5));
+}
+
+.navbar_section_left{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-self: start;
+}
+
+.searchBar{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.tiendaSolLogo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.25rem;
+    margin-top: 0.5rem;
+    justify-self: center;
+}
+
+    .tiendaSolTitulo{
+        margin: 0;
+        font-size: 2rem;
+        margin-top: -1rem;
+        color: white;
+    }
+
+    .logo{
+        width: 48px;
+        height: 48px;
+        display: block;
+        filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.5));
+        transition: filter 0.3s ease;
+    }
+
+.navbar_section_right{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-self: end;
+}
+
+.nav-button {
+  background-color: hsl(219, 79%, 66%);
+  color: white;
+  font-size: 1rem;
+  border: none; /* <-- Tu borde (o '1px solid white') */
+  border-radius: 6px; /* <-- Redondeado (opcional) */
+  padding: 0.5rem;   /* <-- Dales espacio interno (opcional) */
+  cursor: pointer;   /* <-- Para que aparezca la manito */
+}
+
+@media (max-width: 900px) {
+  .navbar_section_right {
+    gap: 0.5rem;
+  }
+
+  .tiendaSolTitulo{
+    font-size: 1.25rem;
+  }
+
+  .cart_count{
+    display: none;
+  }
+}
+
+@media(max-width: 550px){
+    .tiendaSolTitulo {
+    display: none;
+  }
+}
+
+/* Cuando la pantalla mida 480px o menos... */
+@media (max-width: 480px) {
+
+  /* 1. Ocultamos los íconos menos prioritarios */
+  .notifications,
+  .user {
+    display: none;
+  }
+  
+  .logo{
+    justify-self: right;
+  }
+
+  /* 2. Achicamos el padding general */
+  nav {
+    padding: 0 0.5rem;
+  }
+}

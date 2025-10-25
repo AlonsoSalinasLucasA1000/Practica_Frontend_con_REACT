@@ -1,0 +1,111 @@
+.searchBar{
+    background-color: hsl(219, 92%, 86%);
+    border-radius: 12px;
+    box-shadow: 0px 2px 8px rgba(0,0,0);
+    border: 1px solid hsl(219, 92%, 86%);
+    height: 30px;
+    width: clamp(15rem, 45vw, 45rem);
+    transition: all 0.3s ease;
+}
+
+.bagShopping{
+    border-radius: 50%;
+    width: 32px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search_input {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none; /* saca el borde defalut del input*/
+    outline: none; /* Saca el borde azul al hacer clic */
+    background: transparent; /* hace el fondo del input transparente */
+}
+
+.searchBar input::placeholder {
+  color: black;
+  opacity: 1; 
+}
+
+.searchBar:focus-within {
+    box-shadow: none;
+    /* Opción A: Cambiar el color del borde */
+    border-color: #bdbdbd; /* Un azul brillante, por ejemplo */
+}
+
+.botonBusqueda{
+    border-radius: 50%;
+    width: 2rem;
+    height: 1px;
+    padding: 0;
+    border: none; /* saca el borde defalut del input*/
+    outline: none; /* Saca el borde azul al hacer clic */
+    background:  hsl(219, 92%, 86%); /* hace el fondo del input transparente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@media(max-width: 1080px)
+{
+    .searchBar{
+    width: clamp(1rem, 30vw, 45rem);
+  }
+}
+
+@media (max-width: 800px) {
+  
+  .searchBar input::placeholder {
+    color: black;
+    opacity: 0; 
+  }
+    
+  .search_input{
+    display:none
+  }
+
+
+  .bagShopping{
+    display: none;
+  }
+  
+  nav {
+    padding: 0 0.5rem;
+  }
+  
+
+  .searchBar{
+    background-color: rgb(80, 134, 235);
+    border: 1px solid rgb(80, 134, 235);
+    box-shadow: none;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .botonBusqueda{
+    border-radius: 100%;
+    width: 2.5rem;
+    height: 2.5rem;
+    box-shadow: 0px 2px 8px rgba(0,0,0);
+  }
+}
+
+@media(max-width: 480px){
+    .searchBar {
+        width: auto; 
+        background: transparent;
+        border: none;
+        box-shadow: none;
+    }
+
+    .bagShopping{
+        display: none;
+    }
+}

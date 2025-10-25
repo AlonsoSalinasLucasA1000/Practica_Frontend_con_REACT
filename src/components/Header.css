@@ -1,0 +1,16 @@
+.header{
+    
+    background-color: black;
+    background-image: url("../pictures/pageDesign/space.jpg");
+    background-size: cover;
+    background-size: 75px 75px;
+    background-repeat: repeat;
+    background-position: center;
+    margin: 0;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.mensajeBienvenida{
+    color: aliceblue;
+}
