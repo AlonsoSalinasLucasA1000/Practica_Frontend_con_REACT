@@ -6,7 +6,7 @@ import "./Navbar.css"
 import SearchBar from './SearchBar'
 import { Link } from 'react-router-dom'
 
-const Navbar = () => {
+const Navbar = ({ filtrarProductos }) => {
   return (
     <>
         <div className='navbar_fondo'>
@@ -15,8 +15,8 @@ const Navbar = () => {
                     <button className="menu_icon nav-button">
                         <FontAwesomeIcon icon={faBars} />
                     </button>
-                    <SearchBar className="searchBar"></SearchBar> 
-                </div> 
+                    <SearchBar className="searchBar" filtrarProductos={filtrarProductos}></SearchBar>
+                </div>
                
                     <Link to={`/`} className="tiendaSolLogo">
                         <img 
