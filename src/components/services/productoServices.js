@@ -8,6 +8,6 @@ export const obtenerProductos = () => {
 export const obtenerProductosSlowly = () => new Promise((resolve) => {
   setTimeout(() => {
     resolve(Productos)
-  }, 5000)
+  }, 1500)
 })
     

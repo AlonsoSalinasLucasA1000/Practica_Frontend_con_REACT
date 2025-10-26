@@ -5,7 +5,6 @@ import Skeleton from '@mui/material/Skeleton';
 
 const ProductCarousel = ({productos}) => {
 
-  
   return (
     <div className="product-carousel">
       <div className="main-text">

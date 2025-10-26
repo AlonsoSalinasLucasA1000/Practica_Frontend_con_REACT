@@ -1,12 +1,23 @@
-import React from 'react'
+import React, { use } from 'react'
 import Productos  from "../../mockData/productos.js"
 import notFoundProduct from "../../pictures/pageDesign/404.png"
 import "./ProductDetailPage.css"
 import { useParams } from 'react-router-dom';
+import Button from '@mui/material/Button';
+import { useCart } from '../context/CarritoContext.jsx';
+import { useNavigate } from 'react-router-dom';
 
 const ProductDetailPage = () => {
     const { id } = useParams(); // Obtener el ID del producto desde los parámetros de la URL
     const producto = Productos.find(p => p.id === id);
+    const { agregarAlCarrito } = useCart();
+
+    const navigate = useNavigate();
+
+    const handleAgregarYRedirigir = (producto) => {
+        agregarAlCarrito(producto);
+        navigate('/carrito');
+    };
 
     if( !producto ) /* Renderizado condicional, en caso de no existir, devuelve una cosa diferente.*/
     {
@@ -46,7 +57,15 @@ const ProductDetailPage = () => {
                 <div className="precioStructure">
                     <h2 className = "precio">{producto.precio}</h2>
                     <span className="moneda">{producto.moneda}</span>
-                </div> 
+                        <Button 
+                            variant="contained" 
+                            style={{ backgroundColor: 'rgb(80, 134, 235)', color: 'white' }} 
+                            className="botonAgregarCarrito"
+                            onClick={() => handleAgregarYRedirigir(producto)}
+                        >
+                            Agregar al Carrito
+                        </Button>
+                </div>               
             </div>
         </div>
     )

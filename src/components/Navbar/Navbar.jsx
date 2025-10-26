@@ -5,9 +5,13 @@ import  tiendaSolLogo  from "../../pictures/pageDesign/logo.png"
 import "./Navbar.css"
 import SearchBar from './SearchBar'
 import { Link } from 'react-router-dom'
+import { useCart } from '../context/CarritoContext.jsx';
 
 const Navbar = ({ filtrarProductos }) => {
-  return (
+
+    const { carrito } = useCart();
+
+    return (
     <>
         <div className='navbar_fondo'>
             <nav>
@@ -28,10 +32,13 @@ const Navbar = ({ filtrarProductos }) => {
                     </Link> 
 
                 <div className="navbar_section_right">
-                    <button className="cart nav-button">
-                       <FontAwesomeIcon icon={faCartShopping} />
-                       <span className="cart_count">0</span>
-                    </button>
+                    
+                    <Link to={`/carrito`} className="cart_link">
+                        <button className="cart nav-button">
+                            <FontAwesomeIcon icon={faCartShopping} />
+                            <span className="cart_count">{carrito.length}</span>
+                        </button>
+                    </Link>
 
                     <button className="notifications nav-button">
                         <FontAwesomeIcon icon={faBell} />

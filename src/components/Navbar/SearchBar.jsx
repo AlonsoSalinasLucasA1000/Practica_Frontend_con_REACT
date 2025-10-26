@@ -7,8 +7,13 @@ import { useState } from 'react'
 const SearchBar = ({filtrarProductos}) => {
   const [searchText, setSearchText] = useState("");
   
+  const handleSearch = (e) => {
+    e.preventDefault();
+    filtrarProductos(searchText);
+  }
+
   return (
-    <div className="searchBar">
+    <form className="searchBar" onSubmit={handleSearch}>
         <div className="bagShopping">
             <FontAwesomeIcon icon={faBagShopping} />
         </div>
@@ -22,7 +27,7 @@ const SearchBar = ({filtrarProductos}) => {
         <button className="botonBusqueda" onClick={() => filtrarProductos(searchText)}>
             <FontAwesomeIcon icon={faMagnifyingGlass} />
         </button>
-    </div>
+    </form>
   )
 }
 

@@ -1,0 +1,178 @@
+/* --- Contenedor Principal --- */
+.carrito_container {
+  max-width: 1300px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.titulo_pantalla {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #222;
+}
+
+/* --- Mensaje de Carrito Vacío --- */
+.text_sin_productos {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #777;
+  padding: 3rem 0;
+}
+
+/* --- EL LAYOUT DE DOS COLUMNAS --- */
+.carrito_content {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Dos columnas: 2/3 y 1/3 */
+  gap: 2.5rem; /* Espacio entre las columnas */
+}
+
+/* --- COLUMNA IZQUIERDA: Lista de Productos --- */
+.productos_en_carrito {
+  grid-column: 1 / 2; /* Ubica esto en la primera columna */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Espacio entre cada producto */
+}
+
+/* Estilo para cada item individual en el carrito */
+.producto_carrito {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.2rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.imagen_producto_carrito {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.detalles_producto_carrito {
+  flex-grow: 1; /* Hace que los detalles ocupen el espacio disponible */
+}
+
+.titulo_producto_carrito {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+}
+
+/* --- ¡CAMBIO AQUÍ! --- */
+.precio_producto_carrito {
+  font-size: 1.15rem; /* Un poco más grande */
+  font-weight: 500;
+  color: #333;
+  margin: 0;
+}
+
+/* --- ¡AÑADIDO! --- */
+/* Agrega un '$' antes del precio del item */
+.precio_producto_carrito::before {
+  content: '$';
+  margin-right: 4px;
+}
+/* --- Fin del cambio --- */
+
+
+.botones_cantidad {
+  flex-shrink: 0; /* Evita que los botones se achiquen */
+  margin-right: 1rem;
+}
+
+/* --- COLUMNA DERECHA: Total y Formulario --- */
+.total_carrito {
+  grid-column: 2 / 3; /* Ubica esto en la segunda columna */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem; /* Ligeramente más grande */
+  font-weight: bold;
+  padding: 1.5rem;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+}
+
+.total_carrito .total {
+  color: #007bff; /* Un color para destacar el precio final */
+}
+
+/* --- ¡AÑADIDO! --- */
+/* Agrega un '$' antes del total */
+.total_carrito .total::before {
+  content: '$';
+  margin-right: 5px;
+}
+/* --- Fin del cambio --- */
+
+
+.form_carrito {
+  grid-column: 2 / 3; /* Ubica esto en la segunda columna */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Espacio entre los campos del formulario */
+  padding: 1.5rem;
+  background-color: #fafafa;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+}
+
+.accion_form {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* --- RESPONSIVE DESIGN (Para Móviles) --- */
+@media (max-width: 900px) {
+  .carrito_content {
+    /* En pantallas chicas, rompemos las 2 columnas y las apilamos */
+    grid-template-columns: 1fr; /* Una sola columna */
+  }
+
+  /* Reseteamos la ubicación de todos los elementos */
+  .productos_en_carrito,
+  .total_carrito,
+  .form_carrito {
+    grid-column: 1 / -1; /* Ocupa todo el ancho */
+  }
+
+  .total_carrito {
+    order: 2;
+  }
+
+  .form_carrito {
+    order: 3;
+  }
+
+  .productos_en_carrito {
+    order: 1;
+  }
+}
+
+/* Ajuste menor para productos en móviles */
+@media (max-width: 480px) {
+  .producto_carrito {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .botones_cantidad {
+    margin-right: 0.5rem;
+  }
+
+  .producto_carrito > .MuiButton-root {
+    /* Estilo para el botón "Eliminar" */
+    align-self: flex-end; /* Manda el botón al final */
+  }
+}
