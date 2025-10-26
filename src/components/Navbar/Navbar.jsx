@@ -1,9 +1,10 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping, faBell, faUser, faBars } from '@fortawesome/free-solid-svg-icons'
-import  tiendaSolLogo  from "../pictures/pageDesign/logo.png"
+import  tiendaSolLogo  from "../../pictures/pageDesign/logo.png"
 import "./Navbar.css"
 import SearchBar from './SearchBar'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return (
@@ -17,14 +18,14 @@ const Navbar = () => {
                     <SearchBar className="searchBar"></SearchBar> 
                 </div> 
                
-                <div className="tiendaSolLogo">  
-                    <img 
-                        src={tiendaSolLogo}
-                        alt="Logo de Tienda Sol"
-                        className="logo"
-                    />
-                    <h1 className="tiendaSolTitulo"> <b>Tienda Sol</b>  </h1> 
-                </div>    
+                    <Link to={`/`} className="tiendaSolLogo">
+                        <img 
+                            src={tiendaSolLogo}
+                            alt="Logo de Tienda Sol"
+                            className="logo"
+                        />
+                        <span to={`/`} className="tiendaSolTitulo">Tienda Sol</span>
+                    </Link> 
 
                 <div className="navbar_section_right">
                     <button className="cart nav-button">

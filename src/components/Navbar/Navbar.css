@@ -32,6 +32,7 @@ nav{
     align-items: center;
     gap: 0.25rem;
     margin-top: 0.5rem;
+    text-decoration: none;
     justify-self: center;
 }
 
@@ -40,6 +41,10 @@ nav{
         font-size: 2rem;
         margin-top: -1rem;
         color: white;
+        font-weight:900;
+        font-style: sans-serif;
+        text-decoration: none;
+        cursor: pointer;
     }
 
     .logo{

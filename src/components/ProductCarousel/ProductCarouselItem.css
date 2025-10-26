@@ -1,0 +1,136 @@
+/* Este CSS está hecho con IA para acelerar rapidezd de desarrollo */
+
+/* --- Contenedor del Item (controla el tamaño) --- */
+.product-item {
+  width: 280px;     /* Ancho fijo para cada tarjeta */
+  flex-shrink: 0;   /* Evita que las tarjetas se achiquen */
+  box-sizing: border-box;
+}
+
+/* --- Tarjeta de Producto (La parte visual) --- */
+.product-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Sombra suave */
+  overflow: hidden; /* Para que la imagen respete los bordes redondeados */
+  height: 100%;
+  display: flex;
+  flex-direction: column; /* Apila la imagen y la info */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* --- Efecto Hover --- */
+.product-card:hover {
+  transform: translateY(-5px); /* Se levanta un poquito */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Sombra más pronunciada */
+}
+
+/* --- Imagen del Producto --- */
+.product-card img {
+  width: 100%;
+  height: 220px;           /* Altura fija para todas las imágenes */
+  object-fit: contain;     /* 'contain' para que se vea todo el producto */
+  background-color: #f9f9f9; /* Fondo por si la imagen tiene transparencia */
+}
+
+/* --- Contenedor de la Información (Abajo) --- */
+.product-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Hace que este div ocupe el espacio sobrante */
+}
+
+/* --- Título del Producto --- */
+.product-info h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0a1f44;
+  margin: 0 0 10px 0;
+  
+  /* Truco para cortar títulos muy largos */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* --- Precio --- */
+.product-info .price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a253c; /* Un poco más suave que el título */
+  margin-top: auto; /* ¡Magia! Empuja el precio al fondo de la tarjeta */
+}
+
+.stock{
+    font-size: 0.9rem;
+    color: #4caf50; /* Verde para indicar que hay stock */
+    margin-top: 8px;
+}
+
+.moneda{
+    font-size: 0.9rem;
+    color: #0a1f44; 
+    margin-left: 4px;
+}
+
+/* Este es el 'div' que envuelve al botón.
+   Lo usamos para centrar el botón y darle un poco de espacio arriba. */
+.ver-mas-button {
+  text-align: center; /* Centra el link/botón */
+  margin-top: 10px;   /* Le da un respiro del 'stock' */
+  padding-bottom: 15px; /* Espacio extra abajo dentro de la card */
+}
+
+/* Esta es la clase de tu <Link>, que se renderiza como una <a> (un link).
+   La vamos a hacer parecer un botón. */
+.ver-mas {
+  display: inline-block; /* Importante para que tome el padding correctamente */
+  padding: 10px 24px;    /* 10px arriba/abajo, 24px a los lados */
+  
+  background-color: #007bff; /* Un lindo color azul (bootstrap primary) */
+  color: #ffffff;         /* Texto blanco */
+  
+  text-decoration: none;  /* ¡Saca el subrayado horrible del link! */
+  font-weight: bold;      /* Texto en negrita */
+  border-radius: 5px;     /* Bordes redondeados */
+  
+  /* Esto hace que el cambio de color sea suave */
+  transition: background-color 0.3s ease; 
+}
+
+/* Efecto para cuando pasás el mouse por encima */
+.ver-mas:hover {
+  background-color: #0056b3; /* Un azul un poco más oscuro */
+  cursor: pointer;          /* Muestra la manito */
+}
+
+
+/* --- Media Query para pantallas pequeñas --- */
+@media (max-width: 600px) {
+  .product-item {
+    width: 220px; /* Tarjetas un poco más pequeñas en móviles */
+  }
+
+  .product-card img {
+    height: 180px; /* Ajusta la altura de la imagen */
+  }
+}
+/* --- Media Query para pantallas muy pequeñas --- */
+@media (max-width: 400px) {
+  .product-item {
+    width: 180px; /* Tarjetas aún más pequeñas */
+  }
+
+  .product-card img {
+    height: 150px; /* Ajusta la altura de la imagen */
+  }
+
+  .product-info h3 {
+    font-size: 1rem; /* Texto un poco más pequeño */
+  }
+
+  .product-info .price {
+    font-size: 1.1rem; /* Precio un poco más pequeño */
+  }
+}

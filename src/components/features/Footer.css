@@ -1,0 +1,21 @@
+.footer_container{
+    background-color: rgb(80, 134, 235);
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+    filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.5));
+}
+
+.text{
+    color: white;
+    font-size: 1rem;
+    font-weight:700;
+    font-style: sans-serif;
+}
+
+.redes_sociales{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}

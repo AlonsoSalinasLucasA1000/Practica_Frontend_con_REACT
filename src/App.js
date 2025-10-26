@@ -1,16 +1,20 @@
 import './App.css';
-import Header from './components/Header.jsx';
-import Navbar from './components/Navbar.jsx';
-import ProductDetailPage from "./components/ProductDetailPage.jsx"
+import ProductDetailPage from "./components/ProductDetail/ProductDetailPage.jsx"
+import { BrowserRouter } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import Home from './components/features/Home.jsx';
+import Layout from './components/layout/Layout.jsx';
 
 function App() {
   return (
-    <>
-      <Header></Header>
-      <Navbar></Navbar>
-       {/* Acá idealmente debería ir una lista de productos, sin embargo, por ahora incluiremos una única pantalla de detalles de producto */}
-      <ProductDetailPage id="68f451bb5149ce76784f2db0"></ProductDetailPage>
-    </>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} /> {/* el index copia la ruta definida en el padre */}
+            <Route path='/product/:id' element={<ProductDetailPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
   );
 }
 
