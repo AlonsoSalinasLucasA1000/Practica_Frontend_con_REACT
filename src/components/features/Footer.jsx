@@ -2,7 +2,7 @@ import React from 'react'
 import "./Footer.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons'
-
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
@@ -11,7 +11,9 @@ const Footer = () => {
       <br/>
       <span> ——————————————— </span>
       <br />
-      <span className="terminos-y-condiciones text">Términos y Condiciones</span>
+      <Link to={`/terminos-condiciones`} className="terminos-y-condiciones-link"> 
+        <span className="terminos-y-condiciones text">Términos y Condiciones</span>
+      </Link>
       <br />
       <span> ——————————————— </span>
       <br />
@@ -19,10 +21,14 @@ const Footer = () => {
       <br/>
       <div className="redes_sociales">
         <div className="facebook">
-            <FontAwesomeIcon icon={faFacebook} />
+          <Link to={`https://www.facebook.com/lucas.alonso.769059`}>
+            <FontAwesomeIcon className="faFacebook" icon={faFacebook} />
+          </Link>
         </div>
         <div className="instagram">
-            <FontAwesomeIcon icon={faInstagram} />
+          <Link to={`https://www.instagram.com/super_lucas1000`}>
+            <FontAwesomeIcon className="faInstagram" icon={faInstagram}/>
+          </Link>
         </div>
       </div>
     </div>

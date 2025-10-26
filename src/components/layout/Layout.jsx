@@ -6,12 +6,16 @@ import Footer from '../features/Footer.jsx'
 
 const Layout = () => {
   return (
-    <div>
+      <div className="app_container"> 
         <Header></Header>
         <Navbar></Navbar>
-        <Outlet></Outlet>
+
+        <div className="main_content">
+          <Outlet></Outlet>
+        </div>
+
         <Footer></Footer>
-    </div>
+      </div>
   )
 }
 

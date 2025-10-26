@@ -2,8 +2,10 @@
     background-color: rgb(80, 134, 235);
     padding: 20px;
     text-align: center;
-    margin-top: 40px;
     filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.5));
+    height: 12.5rem;
+    width: 100%;
+    margin-top: auto;
 }
 
 .text{
@@ -13,9 +15,28 @@
     font-style: sans-serif;
 }
 
+.terminos-y-condiciones-link{
+    text-decoration: none;
+}
+
 .redes_sociales{
     margin-top: 10px;
     display: flex;
     justify-content: center;
     gap: 15px;
+}
+
+
+.seguinos_en_redes{
+    font-size: 1.5rem;
+}
+
+.faFacebook{
+    color: white;
+    font-size: 2rem;
+}
+
+.faInstagram{
+    color: white;
+    font-size: 2rem;
 }
